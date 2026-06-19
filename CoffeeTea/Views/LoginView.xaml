@@ -1,0 +1,126 @@
+﻿<Window x:Class="CoffeeTea.Views.LoginView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Đăng nhập"
+        Height="500"
+        Width="860"
+        MinHeight="500"
+        MinWidth="760"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        Background="{DynamicResource Brush.WindowBackground}">
+    <Grid Margin="24">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1.3*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+
+        <Border Grid.Column="0"
+                Margin="0,0,18,0"
+                Style="{StaticResource HighlightCardStyle}">
+            <StackPanel VerticalAlignment="Center">
+                <TextBlock Text="CoffeeTea"
+                           Style="{StaticResource TitleTextStyle}"/>
+                <TextBlock Text="Hệ thống quản lý cửa hàng Coffee and Tea"
+                           Style="{StaticResource SectionTitleTextStyle}"
+                           Margin="0,8,0,0"/>
+                <TextBlock Text="Mời bạn đăng nhập để sử dụng"
+                           Style="{StaticResource BodyTextStyle}"
+                           TextWrapping="Wrap"
+                           Margin="0,14,0,0"/>
+<!--Đăng nhập nhanh cho mục đỡ test, không cần nhập mật khẩu, chỉ cần click vào là đăng nhập luôn-->
+                <!--<Border Style="{StaticResource StatusBadgeBorderStyle}"
+                        Margin="0,18,0,0"
+                        HorizontalAlignment="Left">
+                      <StackPanel>
+                            <TextBlock Text="Đăng nhập nhanh"
+                                       Style="{StaticResource CaptionTextStyle}"
+                                       Margin="10"/>
+                            <StackPanel Orientation="Horizontal">
+                                  <Button Grid.Column="0"
+                                    Style="{StaticResource PrimaryButtonStyle}"
+                                    Height="40"
+                                    IsDefault="True"
+                                    Command="{Binding QuickLoginCommand}"
+                                    CommandParameter="admin"> 
+                                    <TextBlock Text="Admin"/>
+                                    </Button>
+                                  <Button Grid.Column="0"
+                                        Style="{StaticResource PrimaryButtonStyle}"
+                                        Height="40"
+                                        IsDefault="True"
+                                        Command="{Binding QuickLoginCommand}"
+                                        CommandParameter="quanly1">
+                                        <TextBlock Text="Quản lý"/>
+                                   </Button> 
+                                  <Button Grid.Column="0"
+                                        Style="{StaticResource PrimaryButtonStyle}"
+                                        Height="40"
+                                        IsDefault="True"
+                                        Command="{Binding QuickLoginCommand}"
+                                        CommandParameter="nhanvien1">
+                                        <TextBlock Text="Nhân viên"/>
+                                  </Button> 
+                            </StackPanel>
+                    </StackPanel>
+                </Border>-->
+            </StackPanel>
+        </Border>
+<!--    .........................................................                 -->
+        <Border Grid.Column="1"
+                Style="{StaticResource CardStyle}">
+            <StackPanel VerticalAlignment="Center">
+                <TextBlock Text="Đăng nhập"
+                           Style="{StaticResource SectionTitleTextStyle}"
+                           Margin="0,0,0,16"/>
+
+                <TextBlock Text="Tên đăng nhập"
+                           Style="{StaticResource LabelTextStyle}"/>
+                <TextBox Style="{StaticResource AppTextBoxStyle}"
+                         Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}"/>
+
+                <TextBlock Text="Mật khẩu"
+                           Style="{StaticResource LabelTextStyle}"/>
+                <PasswordBox x:Name="PasswordInput"
+                             Style="{StaticResource AppPasswordBoxStyle}"
+                             Margin="0,0,0,12"/>
+
+                <TextBlock Text="{Binding ErrorMessage}"
+                           Foreground="{DynamicResource Brush.Danger}"
+                           FontSize="12"
+                           TextWrapping="Wrap"
+                           MinHeight="34"
+                           Margin="0,0,0,10"/>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Button Grid.Column="0"
+                            Style="{StaticResource PrimaryButtonStyle}"
+                            Height="40"
+                            IsDefault="True"
+                            Command="{Binding LoginCommand}"
+                            CommandParameter="{Binding ElementName=PasswordInput}">
+                        <TextBlock Text="Đăng nhập"/>
+                    </Button>
+
+                    <Button Grid.Column="2"
+                            Style="{StaticResource BaseButtonStyle}"
+                            Height="40"
+                            IsCancel="True"
+                            Command="{Binding ExitCommand}">
+                        <TextBlock Text="Thoát"/>
+                    </Button>
+                </Grid>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>
+

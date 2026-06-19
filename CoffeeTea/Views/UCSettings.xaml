@@ -1,0 +1,148 @@
+<UserControl x:Class="CoffeeTea.Views.UCSettings"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d"
+             d:DesignHeight="720"
+             d:DesignWidth="980">
+    <UserControl.Resources>
+        <BooleanToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+    </UserControl.Resources>
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto"
+                  HorizontalScrollBarVisibility="Disabled">
+        <StackPanel Margin="10">
+            <Border Style="{StaticResource HighlightCardStyle}" Margin="0,0,0,14">
+                <StackPanel>
+                    <TextBlock Text="Cài đặt hệ thống"
+                               Style="{StaticResource TitleTextStyle}"
+                               FontSize="26"/>
+                    <TextBlock Text="{Binding LastUpdatedInformation}"
+                               Style="{StaticResource CaptionTextStyle}"
+                               Margin="0,10,0,0"/>
+                </StackPanel>
+            </Border>
+
+            <Border Style="{StaticResource CardStyle}"
+                    Margin="0,0,0,14"
+                    Visibility="{Binding CanEditSystemSettings, Converter={StaticResource BoolToVisibilityConverter}}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="24"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="12"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <StackPanel Grid.Row="0" Grid.ColumnSpan="3">
+                        <TextBlock Text="Thông tin cửa hàng"
+                                   Style="{StaticResource SectionTitleTextStyle}"/>
+                        <TextBlock Text="Chỉnh sửa tên quán, hotline, địa chỉ và giờ hoạt động."
+                                   Style="{StaticResource CaptionTextStyle}"
+                                   TextWrapping="Wrap"
+                                   Margin="0,4,0,0"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="2" Grid.Column="0">
+                        <TextBlock Text="Tên cửa hàng hiển thị" Style="{StaticResource LabelTextStyle}"/>
+                        <TextBox Text="{Binding StoreDisplayName, UpdateSourceTrigger=PropertyChanged}"
+                                 Style="{StaticResource AppTextBoxStyle}"/>
+
+                        <TextBlock Text="Hotline" Style="{StaticResource LabelTextStyle}"/>
+                        <TextBox Text="{Binding Hotline, UpdateSourceTrigger=PropertyChanged}"
+                                 Style="{StaticResource AppTextBoxStyle}"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="2" Grid.Column="2">
+                        <TextBlock Text="Địa chỉ" Style="{StaticResource LabelTextStyle}"/>
+                        <TextBox Text="{Binding StoreAddress, UpdateSourceTrigger=PropertyChanged}"
+                                 Height="86"
+                                 VerticalContentAlignment="Top"
+                                 TextWrapping="Wrap"
+                                 AcceptsReturn="True"
+                                 Style="{StaticResource AppTextBoxStyle}"/>
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="12"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel Grid.Column="0">
+                                <TextBlock Text="Giờ mở cửa (HH:mm)" Style="{StaticResource LabelTextStyle}"/>
+                                <TextBox Text="{Binding OpenTime, UpdateSourceTrigger=PropertyChanged}"
+                                         Style="{StaticResource AppTextBoxStyle}"/>
+                            </StackPanel>
+
+                            <StackPanel Grid.Column="2">
+                                <TextBlock Text="Giờ đóng cửa (HH:mm)" Style="{StaticResource LabelTextStyle}"/>
+                                <TextBox Text="{Binding CloseTime, UpdateSourceTrigger=PropertyChanged}"
+                                         Style="{StaticResource AppTextBoxStyle}"/>
+                            </StackPanel>
+                        </Grid>
+                    </StackPanel>
+                </Grid>
+            </Border>
+            <Border Style="{StaticResource CardStyle}" Margin="0,0,0,14">
+                <StackPanel>
+                    <TextBlock Text="Giao diện ứng dụng"
+                               Style="{StaticResource SectionTitleTextStyle}"/>
+                    <TextBlock Text="Thay đổi giao diện sáng/tối cho ứng dụng."
+                               Style="{StaticResource CaptionTextStyle}"
+                               TextWrapping="Wrap"
+                               Margin="0,4,0,12"/>
+
+                    <CheckBox Content="Bật giao diện tối (Dark Mode)"
+                              IsChecked="{Binding IsDarkTheme}"
+                              Style="{StaticResource AppCheckBoxStyle}"/>
+                    <TextBlock Text="Màu giao diện sẽ đổi ngay. Bấm Lưu cài đặt để lưu cho lần mở sau."
+                               Style="{StaticResource CaptionTextStyle}"
+                               TextWrapping="Wrap"
+                               Margin="0,0,0,8"/>
+                </StackPanel>
+            </Border>
+
+            <Border Style="{StaticResource CardStyle}">
+                <StackPanel>
+                    <WrapPanel>
+                        <Button Content="Lưu cài đặt"
+                                Width="120"
+                                Margin="10,0,0,8"
+                                Style="{StaticResource PrimaryButtonStyle}"
+                                Command="{Binding SaveSettingsCommand}"/>
+
+                        <Button Content="Sao lưu cấu hình"
+                                Width="140"
+                                Margin="10,0,0,8"
+                                Style="{StaticResource BaseButtonStyle}"
+                                Command="{Binding BackupSettingsCommand}"
+                                Visibility="{Binding CanEditSystemSettings, Converter={StaticResource BoolToVisibilityConverter}}"/>
+
+                        <Button Content="{Binding RestoreDefaultsButtonText}"
+                                Width="160"
+                                Margin="10,0,0,8"
+                                Style="{StaticResource DangerButtonStyle}"
+                                Command="{Binding RestoreDefaultsCommand}"/>
+                    </WrapPanel>
+
+                    <TextBlock Text="{Binding SuccessMessage}"
+                               Foreground="{DynamicResource Brush.PrimaryDark}"
+                               FontWeight="SemiBold"
+                               TextWrapping="Wrap"
+                               Margin="0,2,0,0"/>
+                    <TextBlock Text="{Binding ErrorMessage}"
+                               Foreground="{DynamicResource Brush.Danger}"
+                               FontWeight="SemiBold"
+                               TextWrapping="Wrap"
+                               Margin="0,4,0,0"/>
+                </StackPanel>
+            </Border>
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

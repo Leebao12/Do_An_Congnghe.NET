@@ -1,0 +1,210 @@
+﻿<Window x:Class="CoffeeTea.Views.MainView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Quản lý CoffeeTea"
+        Height="760"
+        Width="1366"
+        MinHeight="700"
+        MinWidth="1200"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="CanResize"
+        Background="{DynamicResource Brush.WindowBackground}">
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+    </Window.Resources>
+
+    <Grid Background="{DynamicResource Brush.WindowBackground}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="280"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Border Grid.Column="0"
+                Background="{DynamicResource Brush.Sidebar}"
+                BorderBrush="{DynamicResource Brush.BorderSoft}"
+                BorderThickness="0,0,1,0">
+            <Grid Margin="18">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="16"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="16"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <StackPanel Grid.Row="0">
+                    <Border Style="{StaticResource HighlightCardStyle}">
+                        <StackPanel>
+                            <TextBlock Text="Cửa hàng"
+                                       Style="{StaticResource CaptionTextStyle}"
+                                       Margin="0,6,0,0"/>
+                            <TextBlock Text="CoffeeTea"
+                                       Style="{StaticResource TitleTextStyle}"
+                                       FontSize="24"/>
+                        </StackPanel>
+                    </Border>
+
+                    <Border Style="{StaticResource SidebarCardStyle}" Margin="0,12,0,0">
+                        <StackPanel>
+                            <TextBlock Text="Tài khoản đăng nhập"
+                                       Style="{StaticResource CaptionTextStyle}"/>
+                            <TextBlock Text="{Binding CurrentAccountName}"
+                                       Style="{StaticResource BodyTextStyle}"
+                                       FontWeight="SemiBold"
+                                       Margin="0,4,0,0"/>
+                            <TextBlock Text="{Binding CurrentAccountRole}"
+                                       Style="{StaticResource CaptionTextStyle}"
+                                       Margin="0,2,0,0"/>
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+
+                <ScrollViewer Grid.Row="2"
+                              VerticalScrollBarVisibility="Auto"
+                              HorizontalScrollBarVisibility="Disabled">
+                    <StackPanel>
+                        <TextBlock Text="MENU CHỨC NĂNG"
+                                   Style="{StaticResource CaptionTextStyle}"
+                                   FontWeight="Bold"
+                                   Margin="4,0,0,8"/>
+
+                        <Button Style="{StaticResource SidebarButtonStyle}"
+                                Command="{Binding DashboardCommand}">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="🏠" Margin="0,0,10,0" FontSize="15"/>
+                                <TextBlock Text="Tổng quan"/>
+                            </StackPanel>
+                        </Button>
+
+                        <Expander Header="Danh mục"
+                                  IsExpanded="True"
+                                  Style="{StaticResource SidebarExpanderStyle}"
+                                  Visibility="{Binding CanAccessCatalogMenu, Converter={StaticResource BoolToVisibilityConverter}}">
+                            <StackPanel Margin="8,8,0,0">
+                                <Button Style="{StaticResource SidebarButtonStyle}"
+                                        Command="{Binding DrinkCommand}">
+                                    <TextBlock Text="• Quản lý đồ uống"/>
+                                </Button>
+
+                                <Button Style="{StaticResource SidebarButtonStyle}"
+                                        Command="{Binding CategoryCommand}">
+                                    <TextBlock Text="• Danh mục món"/>
+                                </Button>
+
+                                <Button Style="{StaticResource SidebarButtonStyle}"
+                                        Command="{Binding TableManagementCommand}">
+                                    <TextBlock Text="• Quản lý bàn"/>
+                                </Button>
+
+                                <Button Style="{StaticResource SidebarButtonStyle}"
+                                        Command="{Binding StaffCommand}">
+                                    <TextBlock Text="• Nhân viên"/>
+                                </Button>
+
+                                <Button Style="{StaticResource SidebarButtonStyle}"
+                                        Command="{Binding SupplierCommand}">
+                                    <TextBlock Text="• Nhà cung cấp"/>
+                                </Button>
+                            </StackPanel>
+                        </Expander>
+
+                        <Expander Header="Bán hàng"
+                                  IsExpanded="True"
+                                  Style="{StaticResource SidebarExpanderStyle}"
+                                  Visibility="{Binding CanAccessSalesMenu, Converter={StaticResource BoolToVisibilityConverter}}">
+                            <StackPanel Margin="8,8,0,0">
+                                <Button Style="{StaticResource SidebarButtonStyle}"
+                                        Command="{Binding OrderCommand}">
+                                    <TextBlock Text="• Lập hóa đơn"/>
+                                </Button>
+
+                                <Button Style="{StaticResource SidebarButtonStyle}"
+                                        Command="{Binding TableStatusCommand}">
+                                    <TextBlock Text="• Trạng thái bàn"/>
+                                </Button>
+                            </StackPanel>
+                        </Expander>
+
+                        <Expander Header="Kho hàng"
+                                  IsExpanded="False"
+                                  Style="{StaticResource SidebarExpanderStyle}"
+                                  Visibility="{Binding CanAccessWarehouseMenu, Converter={StaticResource BoolToVisibilityConverter}}">
+                            <StackPanel Margin="8,8,0,0">
+                                <Button Style="{StaticResource SidebarButtonStyle}"
+                                        Command="{Binding ImportCommand}">
+                                    <TextBlock Text="• Phiếu nhập hàng"/>
+                                </Button>
+
+                                <Button Style="{StaticResource SidebarButtonStyle}"
+                                        Command="{Binding InventoryCommand}">
+                                    <TextBlock Text="• Tồn kho"/>
+                                </Button>
+                            </StackPanel>
+                        </Expander>
+
+                        <Expander Header="Thống kê"
+                                  IsExpanded="False"
+                                  Style="{StaticResource SidebarExpanderStyle}"
+                                  Visibility="{Binding CanAccessStatisticsMenu, Converter={StaticResource BoolToVisibilityConverter}}">
+                            <StackPanel Margin="8,8,0,0">
+                                <Button Style="{StaticResource SidebarButtonStyle}"
+                                        Command="{Binding RevenueReportCommand}">
+                                    <TextBlock Text="• Thống kê cửa hàng"/>
+                                </Button>
+                            </StackPanel>
+                        </Expander>
+
+                        <Expander Header="Hệ thống"
+                                  IsExpanded="False"
+                                  Style="{StaticResource SidebarExpanderStyle}"
+                                  Visibility="{Binding CanAccessSystemMenu, Converter={StaticResource BoolToVisibilityConverter}}">
+                            <StackPanel Margin="8,8,0,0">
+                                <Button Style="{StaticResource SidebarButtonStyle}"
+                                        Command="{Binding ProfileCommand}">
+                                    <TextBlock Text="• Tài khoản và đổi mật khẩu"/>
+                                </Button>
+
+                                <Button Style="{StaticResource SidebarButtonStyle}"
+                                        Command="{Binding SettingsCommand}"
+                                        Visibility="{Binding CanAccessSettings, Converter={StaticResource BoolToVisibilityConverter}}">
+                                    <TextBlock Text="• Cài đặt hệ thống"/>
+                                </Button>
+                            </StackPanel>
+                        </Expander>
+                    </StackPanel>
+                </ScrollViewer>
+
+                <StackPanel Grid.Row="4">
+                    <Button Style="{StaticResource BaseButtonStyle}"
+                            Command="{Binding LogoutCommand}">
+                        <TextBlock Text="Đăng xuất"/>
+                    </Button>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <Grid Grid.Column="1">
+            <ContentControl Content="{Binding CurrentView}" Margin="16"/>
+
+            <TextBlock Text="Chọn một chức năng ở menu bên trái để bắt đầu thao tác"
+                       FontStyle="Italic"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center">
+                <TextBlock.Style>
+                    <Style TargetType="TextBlock" BasedOn="{StaticResource BodyTextStyle}">
+                        <Setter Property="Visibility" Value="Collapsed"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding CurrentView}" Value="{x:Null}">
+                                <Setter Property="Visibility" Value="Visible"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBlock.Style>
+            </TextBlock>
+        </Grid>
+    </Grid>
+</Window>
+

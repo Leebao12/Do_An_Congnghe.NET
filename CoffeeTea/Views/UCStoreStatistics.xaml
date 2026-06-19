@@ -1,0 +1,99 @@
+﻿<UserControl x:Class="CoffeeTea.Views.UCStoreStatistics"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CoffeeTea.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+	<Grid Margin="16">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="*"/>
+		</Grid.RowDefinitions>
+
+		<Border Grid.Row="0" Style="{StaticResource CardStyle}" Margin="0,0,0,16">
+			<StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+				<TextBlock Text="Từ ngày:" Style="{StaticResource LabelTextStyle}" VerticalAlignment="Center" Margin="0,0,8,0"/>
+				<DatePicker Language="vi-VN" Style="{StaticResource AppDatePickerStyle}" SelectedDate="{Binding FromDate}" Margin="0,0,24,0"/>
+
+				<TextBlock Text="Đến ngày:" Style="{StaticResource LabelTextStyle}" VerticalAlignment="Center" Margin="0,0,8,0"/>
+				<DatePicker Language="vi-VN" Style="{StaticResource AppDatePickerStyle}" SelectedDate="{Binding ToDate}" Margin="0,0,24,0"/>
+
+				<Button Content="Lọc dữ liệu" Style="{StaticResource PrimaryButtonStyle}" Height="38" Margin="0" Command="{Binding FilterCommand}"/>
+				<Button Content="Xuất Report" Style="{StaticResource SuccessButtonStyle}" Height="38" Margin="12,0,0,0" Command="{Binding ExportReportCommand}"/>
+			</StackPanel>
+		</Border>
+
+		<!-- Thẻ Tổng quan (Summary Cards) -->
+		<Grid Grid.Row="1" Margin="0,0,0,16">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*"/>
+				<ColumnDefinition Width="16"/>
+				<ColumnDefinition Width="*"/>
+				<ColumnDefinition Width="16"/>
+				<ColumnDefinition Width="*"/>
+			</Grid.ColumnDefinitions>
+
+			<Border Grid.Column="0" Style="{StaticResource HighlightCardStyle}">
+				<StackPanel>
+					<TextBlock Text="Tổng doanh thu" Style="{StaticResource CaptionTextStyle}"/>
+					<TextBlock Text="{Binding TotalRevenue, StringFormat={}{0:N0} đ}" Style="{StaticResource TitleTextStyle}" Foreground="{DynamicResource Brush.PrimaryDark}" Margin="0,8,0,0"/>
+				</StackPanel>
+			</Border>
+
+			<Border Grid.Column="2" Style="{StaticResource CardStyle}" Background="{DynamicResource Brush.Info}">
+				<StackPanel>
+					<TextBlock Text="Số lượng hóa đơn" Style="{StaticResource CaptionTextStyle}"/>
+					<TextBlock Text="{Binding TotalInvoices}" Style="{StaticResource TitleTextStyle}" Margin="0,8,0,0"/>
+				</StackPanel>
+			</Border>
+
+			<Border Grid.Column="4" Style="{StaticResource CardStyle}" Background="{DynamicResource Brush.Warning}">
+				<StackPanel>
+					<TextBlock Text="Doanh thu trung bình / HĐ" Style="{StaticResource CaptionTextStyle}"/>
+					<TextBlock Text="{Binding AveragePerInvoice, StringFormat={}{0:N0} đ}" Style="{StaticResource TitleTextStyle}" Margin="0,8,0,0"/>
+				</StackPanel>
+			</Border>
+		</Grid>
+
+		<Border Grid.Row="2" Style="{StaticResource CardStyle}">
+			<Grid>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="Auto"/>
+					<RowDefinition Height="*"/>
+				</Grid.RowDefinitions>
+
+				<TextBlock Grid.Row="0" Text="Danh sách hóa đơn" Style="{StaticResource SectionTitleTextStyle}" Margin="0,0,0,12"/>
+
+				<DataGrid Grid.Row="1" Style="{StaticResource AppDataGridStyle}" ItemsSource="{Binding Invoices}">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Mã HĐ" Binding="{Binding MaHoaDon}" Width="70" />
+                        <DataGridTextColumn Header="Ngày lập" Binding="{Binding NgayLap, StringFormat={}{0:dd/MM/yyyy HH:mm}}" Width="140" />
+                        <DataGridTextColumn Header="Bàn" Binding="{Binding Ban.TenBan}" Width="80" />
+                        <DataGridTextColumn Header="Nhân viên" Binding="{Binding NhanVien.HoTen}" Width="1.5*" />
+                        <DataGridTextColumn Header="Phương thức" Binding="{Binding PhuongThucTT}" Width="100" />
+                        <DataGridTextColumn Header="Tổng tiền" Binding="{Binding TongTien, StringFormat={}{0:N0}}" Width="1*" />
+                        <DataGridTextColumn Header="Trạng thái" Binding="{Binding TrangThai}" Width="100" />
+                        <DataGridTemplateColumn Header="Thao tác" Width="145">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Content="Xem hóa đơn"
+                                            Width="126"
+                                            Height="32"
+                                            Padding="8,0"
+                                            Margin="0"
+                                            FontSize="13"
+                                            Style="{StaticResource PrimaryButtonStyle}"
+                                            Command="{Binding DataContext.ViewInvoiceCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}"
+                                            CommandParameter="{Binding}"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+			</Grid>
+		</Border>
+	</Grid>
+</UserControl>

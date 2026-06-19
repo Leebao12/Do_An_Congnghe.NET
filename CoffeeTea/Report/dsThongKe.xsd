@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsThongKe" targetNamespace="http://tempuri.org/dsThongKe.xsd" xmlns:mstns="http://tempuri.org/dsThongKe.xsd" xmlns="http://tempuri.org/dsThongKe.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="QL_CoffeeTeaConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="QL_CoffeeTeaConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.CoffeeTea.Properties.Settings.GlobalReference.Default.QL_CoffeeTeaConnectionString1" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="HoaDonTableAdapter" GeneratorDataComponentClassName="HoaDonTableAdapter" Name="HoaDon" UserDataComponentName="HoaDonTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="QL_CoffeeTeaConnectionString1 (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT TOP 0
+    CAST(0 AS INT) AS STT,
+    CAST(hd.MaHoaDon AS VARCHAR(10)) AS MaHD,
+    CAST(hd.NgayLap AS DATETIME) AS NgayLap,
+    CAST(nv.HoTen AS NVARCHAR(100)) AS NhanVien,
+    CAST(b.TenBan AS NVARCHAR(50)) AS Ban,
+    CAST(hd.PhuongThucTT AS NVARCHAR(50)) AS PTTT,
+    CAST(hd.TongTien AS DECIMAL(18, 2)) AS TongTien,
+    CAST(hd.TrangThai AS NVARCHAR(30)) AS TrangThai
+FROM HoaDon hd
+LEFT JOIN NhanVien nv ON hd.MaNhanVien = nv.MaNhanVien
+LEFT JOIN Ban b ON hd.MaBan = b.MaBan;</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="STT" DataSetColumn="STT" />
+              <Mapping SourceColumn="MaHD" DataSetColumn="MaHD" />
+              <Mapping SourceColumn="NgayLap" DataSetColumn="NgayLap" />
+              <Mapping SourceColumn="NhanVien" DataSetColumn="NhanVien" />
+              <Mapping SourceColumn="Ban" DataSetColumn="Ban" />
+              <Mapping SourceColumn="PTTT" DataSetColumn="PTTT" />
+              <Mapping SourceColumn="TongTien" DataSetColumn="TongTien" />
+              <Mapping SourceColumn="TrangThai" DataSetColumn="TrangThai" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="QL_CoffeeTeaConnectionString1 (Settings)" DbObjectName="" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByDate" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByDate" GeneratorSourceName="FillByDate" GetMethodModifier="Public" GetMethodName="GetDataByDate" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByDate" UserSourceName="FillByDate">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT 
+    CAST(ROW_NUMBER() OVER (ORDER BY hd.NgayLap, hd.MaHoaDon) AS INT) AS STT,
+    CAST(hd.MaHoaDon AS VARCHAR(10)) AS MaHD,
+    CAST(hd.NgayLap AS DATETIME) AS NgayLap,
+    CAST(ISNULL(nv.HoTen, N'') AS NVARCHAR(100)) AS NhanVien,
+    CAST(ISNULL(b.TenBan, N'') AS NVARCHAR(50)) AS Ban,
+    CAST(ISNULL(hd.PhuongThucTT, N'') AS NVARCHAR(50)) AS PTTT,
+    CAST(ISNULL(hd.TongTien, 0) AS DECIMAL(18, 2)) AS TongTien,
+    CAST(ISNULL(hd.TrangThai, N'') AS NVARCHAR(30)) AS TrangThai
+FROM HoaDon hd
+LEFT JOIN NhanVien nv ON hd.MaNhanVien = nv.MaNhanVien
+LEFT JOIN Ban b ON hd.MaBan = b.MaBan
+WHERE hd.TrangThai = N'Đã thanh toán'
+  AND hd.NgayLap &gt;= @TuNgay
+  AND hd.NgayLap &lt; DATEADD(DAY, 1, @DenNgay)
+ORDER BY hd.NgayLap, hd.MaHoaDon;</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsThongKe" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsThongKe" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsThongKe">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="HoaDon" msprop:Generator_RowEvHandlerName="HoaDonRowChangeEventHandler" msprop:Generator_RowDeletedName="HoaDonRowDeleted" msprop:Generator_RowDeletingName="HoaDonRowDeleting" msprop:Generator_RowEvArgName="HoaDonRowChangeEvent" msprop:Generator_TablePropName="HoaDon" msprop:Generator_RowChangedName="HoaDonRowChanged" msprop:Generator_UserTableName="HoaDon" msprop:Generator_RowChangingName="HoaDonRowChanging" msprop:Generator_RowClassName="HoaDonRow" msprop:Generator_TableClassName="HoaDonDataTable" msprop:Generator_TableVarName="tableHoaDon">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="STT" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInTable="STTColumn" msprop:Generator_ColumnPropNameInRow="STT" msprop:Generator_UserColumnName="STT" msprop:Generator_ColumnVarNameInTable="columnSTT" type="xs:int" minOccurs="0" />
+              <xs:element name="MaHD" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInTable="MaHDColumn" msprop:Generator_ColumnPropNameInRow="MaHD" msprop:Generator_UserColumnName="MaHD" msprop:Generator_ColumnVarNameInTable="columnMaHD" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NgayLap" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInTable="NgayLapColumn" msprop:Generator_ColumnPropNameInRow="NgayLap" msprop:Generator_UserColumnName="NgayLap" msprop:Generator_ColumnVarNameInTable="columnNgayLap" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="NhanVien" msprop:Generator_ColumnPropNameInTable="NhanVienColumn" msprop:Generator_ColumnPropNameInRow="NhanVien" msprop:Generator_UserColumnName="NhanVien" msprop:Generator_ColumnVarNameInTable="columnNhanVien" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Ban" msprop:Generator_ColumnPropNameInTable="BanColumn" msprop:Generator_ColumnPropNameInRow="Ban" msprop:Generator_UserColumnName="Ban" msprop:Generator_ColumnVarNameInTable="columnBan" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PTTT" msprop:Generator_ColumnPropNameInTable="PTTTColumn" msprop:Generator_ColumnPropNameInRow="PTTT" msprop:Generator_UserColumnName="PTTT" msprop:Generator_ColumnVarNameInTable="columnPTTT" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TongTien" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInTable="TongTienColumn" msprop:Generator_ColumnPropNameInRow="TongTien" msprop:Generator_UserColumnName="TongTien" msprop:Generator_ColumnVarNameInTable="columnTongTien" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TrangThai" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInTable="TrangThaiColumn" msprop:Generator_ColumnPropNameInRow="TrangThai" msprop:Generator_UserColumnName="TrangThai" msprop:Generator_ColumnVarNameInTable="columnTrangThai" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

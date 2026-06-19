@@ -1,0 +1,15 @@
+﻿{
+  "StoreDisplayName": "CoffeeTea",
+  "StoreAddress": "Chi nh\u00E1nh m\u1EB7c \u0111\u1ECBnh - vui l\u00F2ng c\u1EADp nh\u1EADt \u0111\u1ECBa ch\u1EC9 th\u1EF1c t\u1EBF.",
+  "Hotline": "0901 000 001",
+  "OpenTime": "06:30",
+  "CloseTime": "22:30",
+  "EnableLowStockAlert": true,
+  "LowStockThreshold": 10,
+  "EnableAutoLock": false,
+  "AutoLockMinutes": 30,
+  "ConfirmBeforeExit": true,
+  "EnableDailySummaryNotification": true,
+  "LastUpdatedBy": "Nguy\u1EC5n Ho\u00E0ng Anh",
+  "LastUpdatedAt": "2026-04-24T16:33:23.7040451+07:00"
+}

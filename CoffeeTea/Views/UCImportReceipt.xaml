@@ -1,0 +1,293 @@
+﻿<UserControl x:Class="CoffeeTea.Views.UCImportReceipt"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CoffeeTea.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="720" d:DesignWidth="1086">
+    <Grid Margin="18">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="16"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <Border Grid.Row="0"
+            Style="{StaticResource HighlightCardStyle}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="260"/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel>
+                    <TextBlock Text="📦 Lập hóa đơn nhập hàng"
+                           Style="{StaticResource TitleTextStyle}"/>
+                    <TextBlock Text="Chọn nhà cung cấp, thêm chi tiết món/vật tư và lưu phiếu để tự động cập nhật tồn kho."
+                           Style="{StaticResource BodyTextStyle}"
+                           Margin="0,8,0,0"/>
+                </StackPanel>
+
+                <Border Grid.Column="1"
+                    Style="{StaticResource StatusBadgeBorderStyle}"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Center">
+                    <StackPanel>
+                        <TextBlock Text="Mã phiếu hiện tại"
+                               Style="{StaticResource CaptionTextStyle}"/>
+                        <TextBlock Text="{Binding CurrentReceiptId}"
+                               Style="{StaticResource BodyTextStyle}"
+                               FontWeight="Bold"/>
+                    </StackPanel>
+                </Border>
+            </Grid>
+        </Border>
+
+        <!-- Body -->
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="360"/>
+                <ColumnDefinition Width="16"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Receipt form -->
+            <Border Grid.Column="0"
+                Style="{StaticResource CardStyle}">
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                    <StackPanel>
+                        <TextBlock Text="Thông tin phiếu nhập"
+                               Style="{StaticResource SectionTitleTextStyle}"
+                               Margin="0,0,0,14"/>
+
+                        <TextBlock Text="Nhà cung cấp"
+                               Style="{StaticResource LabelTextStyle}"/>
+                        <ComboBox ItemsSource="{Binding Suppliers}"
+                              SelectedItem="{Binding SelectedSupplier, Mode=TwoWay}"
+                              DisplayMemberPath="SupplierName"
+                              Style="{StaticResource AppComboBoxStyle}"/>
+
+                        <TextBlock Text="Ngày nhập"
+                               Style="{StaticResource LabelTextStyle}"/>
+                        <DatePicker SelectedDate="{Binding ImportDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, ValidatesOnExceptions=True, NotifyOnValidationError=True}"
+                                Style="{StaticResource AppDatePickerStyle}"/>
+
+                        <TextBlock Text="Món / vật tư"
+                               Style="{StaticResource LabelTextStyle}"/>
+                        <ComboBox ItemsSource="{Binding DrinkItems}"
+                              SelectedItem="{Binding SelectedDrink, Mode=TwoWay}"
+                              DisplayMemberPath="DrinkName"
+                              Style="{StaticResource AppComboBoxStyle}"/>
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="12"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel Grid.Column="0">
+                                <TextBlock Text="Số lượng"
+                                       Style="{StaticResource LabelTextStyle}"/>
+                                <TextBox Text="{Binding QuantityText, UpdateSourceTrigger=PropertyChanged}"
+                                     Style="{StaticResource AppTextBoxStyle}"/>
+                            </StackPanel>
+
+                            <StackPanel Grid.Column="2">
+                                <TextBlock Text="Đơn giá nhập"
+                                       Style="{StaticResource LabelTextStyle}"/>
+                                <TextBox Text="{Binding ImportPriceText, UpdateSourceTrigger=PropertyChanged}"
+                                     Style="{StaticResource AppTextBoxStyle}"/>
+                            </StackPanel>
+                        </Grid>
+
+                        <TextBlock Text="Ghi chú"
+                               Style="{StaticResource LabelTextStyle}"/>
+                        <TextBox Text="{Binding Note, UpdateSourceTrigger=PropertyChanged}"
+                             Height="70"
+                             TextWrapping="Wrap"
+                             AcceptsReturn="True"
+                             VerticalScrollBarVisibility="Auto"
+                             Style="{StaticResource AppTextBoxStyle}"/>
+
+                        <Button Content="Thêm vào chi tiết"
+                            Style="{StaticResource PrimaryButtonStyle}"
+                            Margin="0,4,0,12"
+                            Command="{Binding AddDetailCommand}"/>
+
+                        <Border Style="{StaticResource SidebarCardStyle}"
+                            Padding="14"
+                            Margin="0,0,0,14">
+                            <StackPanel>
+                                <TextBlock Text="Tóm tắt phiếu"
+                                       Style="{StaticResource SectionTitleTextStyle}"
+                                       FontSize="16"/>
+                                <Grid Margin="0,12,0,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="Số dòng:"
+                                           Style="{StaticResource BodyTextStyle}"/>
+                                    <TextBlock Grid.Column="1"
+                                           Text="{Binding DetailCountText}"
+                                           Style="{StaticResource BodyTextStyle}"
+                                           FontWeight="Bold"/>
+                                </Grid>
+                                <Grid Margin="0,8,0,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="Tổng tiền:"
+                                           Style="{StaticResource BodyTextStyle}"/>
+                                    <TextBlock Grid.Column="1"
+                                           Text="{Binding TotalAmountText}"
+                                           Style="{StaticResource TitleTextStyle}"
+                                           FontSize="18"/>
+                                </Grid>
+                            </StackPanel>
+                        </Border>
+
+                        <WrapPanel>
+                            <Button Content="Lưu phiếu"
+                                Style="{StaticResource SuccessButtonStyle}"
+                                Command="{Binding SaveReceiptCommand}"/>
+                            <Button Content="Làm mới"
+                                Style="{StaticResource BaseButtonStyle}"
+                                Command="{Binding ClearReceiptCommand}"/>
+                        </WrapPanel>
+                    </StackPanel>
+                </ScrollViewer>
+            </Border>
+
+            <!-- Details + history -->
+            <Grid Grid.Column="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="16"/>
+                    <RowDefinition Height="240"/>
+                </Grid.RowDefinitions>
+
+                <Border Grid.Row="0"
+                    Style="{StaticResource CardStyle}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="12"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <StackPanel Grid.Row="0">
+                            <TextBlock Text="Chi tiết phiếu nhập"
+                                   Style="{StaticResource SectionTitleTextStyle}"/>
+                            <TextBlock Text="Có thể thêm nhiều món/vật tư trước khi lưu phiếu."
+                                   Style="{StaticResource CaptionTextStyle}"
+                                   Margin="0,4,0,0"/>
+                        </StackPanel>
+
+                        <DataGrid Grid.Row="2"
+                              ItemsSource="{Binding ImportDetails}"
+                              Style="{StaticResource AppDataGridStyle}"
+                              GridLinesVisibility="None"
+                              BorderThickness="0"
+                              RowHeaderWidth="0"
+                              HeadersVisibility="Column">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="STT"
+                                                Binding="{Binding LineNo}"
+                                                Width="55"/>
+                                <DataGridTextColumn Header="Mã món"
+                                                Binding="{Binding DrinkId}"
+                                                Width="90"/>
+                                <DataGridTextColumn Header="Tên món / vật tư"
+                                                Binding="{Binding DrinkName}"
+                                                Width="*"/>
+                                <DataGridTextColumn Header="ĐVT"
+                                                Binding="{Binding Unit}"
+                                                Width="70"/>
+                                <DataGridTextColumn Header="SL"
+                                                Binding="{Binding Quantity}"
+                                                Width="70"/>
+                                <DataGridTextColumn Header="Đơn giá"
+                                                Binding="{Binding ImportPrice, StringFormat={}{0:N0} đ}"
+                                                Width="110"/>
+                                <DataGridTextColumn Header="Thành tiền"
+                                                Binding="{Binding LineTotal, StringFormat={}{0:N0} đ}"
+                                                Width="120"/>
+                                <DataGridTemplateColumn Header="Xóa"
+                                                    Width="70">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Button Content="Xóa"
+                                                Style="{StaticResource DangerButtonStyle}"
+                                                Command="{Binding DataContext.RemoveDetailCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}"
+                                                CommandParameter="{Binding}"/>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Grid>
+                </Border>
+
+                <Border Grid.Row="2"
+                    Style="{StaticResource CardStyle}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="12"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <Grid Grid.Row="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock Text="Lịch sử phiếu nhập gần đây"
+                                   Style="{StaticResource SectionTitleTextStyle}"/>
+                            <Border Grid.Column="1"
+                                Style="{StaticResource StatusBadgeBorderStyle}">
+                                <TextBlock Text="{Binding ReceiptCountText, StringFormat='Đã lưu: {0}'}"
+                                       Style="{StaticResource CaptionTextStyle}"
+                                       FontWeight="Bold"/>
+                            </Border>
+                        </Grid>
+
+                        <DataGrid Grid.Row="2"
+                              ItemsSource="{Binding ImportReceipts}"
+                              SelectedItem="{Binding SelectedReceipt, Mode=TwoWay}"
+                              Style="{StaticResource AppDataGridStyle}"
+                              GridLinesVisibility="None"
+                              BorderThickness="0"
+                              RowHeaderWidth="0"
+                              HeadersVisibility="Column">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Mã phiếu"
+                                                Binding="{Binding ReceiptId}"
+                                                Width="130"/>
+                                <DataGridTextColumn Header="Ngày nhập"
+                                                Binding="{Binding ImportDate, StringFormat={}{0:dd/MM/yyyy}}"
+                                                Width="100"/>
+                                <DataGridTextColumn Header="Nhà cung cấp"
+                                                Binding="{Binding SupplierName}"
+                                                Width="*"/>
+                                <DataGridTextColumn Header="Số dòng"
+                                                Binding="{Binding DetailCount}"
+                                                Width="80"/>
+                                <DataGridTextColumn Header="Tổng tiền"
+                                                Binding="{Binding TotalAmount, StringFormat={}{0:N0} đ}"
+                                                Width="130"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Grid>
+                </Border>
+            </Grid>
+        </Grid>
+    </Grid>
+
+</UserControl>

@@ -1,0 +1,99 @@
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\bin\CodexBuild\libSkiaSharp.dylib
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\bin\CodexBuild\x86\libSkiaSharp.dll
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\bin\CodexBuild\x64\libSkiaSharp.dll
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\bin\CodexBuild\arm64\libSkiaSharp.dll
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\bin\CodexBuild\CoffeeTea.exe.config
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\bin\CodexBuild\CoffeeTea.exe
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\bin\CodexBuild\CoffeeTea.pdb
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\bin\CodexBuild\EntityFramework.dll
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\bin\CodexBuild\EntityFramework.SqlServer.dll
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\bin\CodexBuild\GLWpfControl.dll
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\bin\CodexBuild\HarfBuzzSharp.dll
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\bin\CodexBuild\LiveChartsCore.dll
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\bin\CodexBuild\LiveChartsCore.SkiaSharpView.dll
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\bin\CodexBuild\LiveChartsCore.SkiaSharpView.WPF.dll
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\bin\CodexBuild\Microsoft.Bcl.AsyncInterfaces.dll
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\bin\CodexBuild\OpenTK.dll
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\bin\CodexBuild\SkiaSharp.dll
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\bin\CodexBuild\SkiaSharp.HarfBuzz.dll
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\bin\CodexBuild\SkiaSharp.Views.Desktop.Common.dll
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\bin\CodexBuild\SkiaSharp.Views.WPF.dll
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\bin\CodexBuild\System.Buffers.dll
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\bin\CodexBuild\System.Memory.dll
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\bin\CodexBuild\System.Numerics.Vectors.dll
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\bin\CodexBuild\System.Runtime.CompilerServices.Unsafe.dll
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\bin\CodexBuild\System.Text.Encodings.Web.dll
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\bin\CodexBuild\System.Text.Json.dll
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\bin\CodexBuild\System.Threading.Tasks.Extensions.dll
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\bin\CodexBuild\System.ValueTuple.dll
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\bin\CodexBuild\EntityFramework.xml
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\bin\CodexBuild\EntityFramework.SqlServer.xml
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\bin\CodexBuild\GLWpfControl.pdb
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\bin\CodexBuild\HarfBuzzSharp.pdb
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\bin\CodexBuild\LiveChartsCore.xml
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\bin\CodexBuild\LiveChartsCore.SkiaSharpView.xml
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\bin\CodexBuild\LiveChartsCore.SkiaSharpView.WPF.xml
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\bin\CodexBuild\Microsoft.Bcl.AsyncInterfaces.xml
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\bin\CodexBuild\OpenTK.pdb
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\bin\CodexBuild\OpenTK.xml
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\bin\CodexBuild\SkiaSharp.pdb
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\bin\CodexBuild\SkiaSharp.HarfBuzz.pdb
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\bin\CodexBuild\SkiaSharp.Views.Desktop.Common.pdb
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\bin\CodexBuild\SkiaSharp.Views.WPF.pdb
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\bin\CodexBuild\System.Buffers.xml
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\bin\CodexBuild\System.Memory.xml
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\bin\CodexBuild\System.Numerics.Vectors.xml
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\bin\CodexBuild\System.Runtime.CompilerServices.Unsafe.xml
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\bin\CodexBuild\System.Text.Encodings.Web.xml
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\bin\CodexBuild\System.Text.Json.xml
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\bin\CodexBuild\System.Threading.Tasks.Extensions.xml
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\bin\CodexBuild\System.ValueTuple.xml
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\obj\Any CPU\Debug\CoffeeTea.csproj.AssemblyReference.cache
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\obj\Any CPU\Debug\CoffeeTea.exe.config
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\obj\Any CPU\Debug\Resources\AppStyles.baml
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\obj\Any CPU\Debug\Views\LoginView.baml
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\obj\Any CPU\Debug\Views\MainView.baml
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\obj\Any CPU\Debug\Views\UCCategoryManagement.baml
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\obj\Any CPU\Debug\Views\UCDashboardView.baml
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\obj\Any CPU\Debug\Views\UCDrinkManagement.baml
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\obj\Any CPU\Debug\Views\UCProfile.baml
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\obj\Any CPU\Debug\Views\UCSettings.baml
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\obj\Any CPU\Debug\Views\UCStaffManagement.baml
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\obj\Any CPU\Debug\Views\StoreStatisticsReportWindow.baml
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\obj\Any CPU\Debug\Views\UCTableManagement.baml
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\obj\Any CPU\Debug\Views\LoginView.g.cs
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\obj\Any CPU\Debug\Views\MainView.g.cs
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\obj\Any CPU\Debug\Views\UCCategoryManagement.g.cs
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\obj\Any CPU\Debug\Views\UCDashboardView.g.cs
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\obj\Any CPU\Debug\Views\UCDrinkManagement.g.cs
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\obj\Any CPU\Debug\Views\UCImportReceipt.g.cs
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\obj\Any CPU\Debug\Views\UCInventory.g.cs
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\obj\Any CPU\Debug\Views\UCOrder.g.cs
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\obj\Any CPU\Debug\Views\UCPayment.g.cs
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\obj\Any CPU\Debug\Views\UCProfile.g.cs
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\obj\Any CPU\Debug\Views\UCSettings.g.cs
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\obj\Any CPU\Debug\Views\UCStaffManagement.g.cs
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\obj\Any CPU\Debug\Views\UCStoreStatistics.g.cs
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\obj\Any CPU\Debug\Views\StoreStatisticsReportWindow.g.cs
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\obj\Any CPU\Debug\Views\UCSupplierManagement.g.cs
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\obj\Any CPU\Debug\Views\UCTableManagement.g.cs
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\obj\Any CPU\Debug\Views\UCTableStatus.g.cs
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\obj\Any CPU\Debug\App.g.cs
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\obj\Any CPU\Debug\CoffeeTea_Content.g.cs
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\obj\Any CPU\Debug\CoffeeTea_MarkupCompile.cache
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\obj\Any CPU\Debug\CoffeeTea_MarkupCompile.lref
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\obj\Any CPU\Debug\App.baml
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\obj\Any CPU\Debug\Views\UCImportReceipt.baml
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\obj\Any CPU\Debug\Views\UCInventory.baml
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\obj\Any CPU\Debug\Views\UCOrder.baml
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\obj\Any CPU\Debug\Views\UCPayment.baml
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\obj\Any CPU\Debug\Views\UCStoreStatistics.baml
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\obj\Any CPU\Debug\Views\UCSupplierManagement.baml
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\obj\Any CPU\Debug\Views\UCTableStatus.baml
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\obj\Any CPU\Debug\CoffeeTea.g.resources
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\obj\Any CPU\Debug\CoffeeTea.Properties.Resources.resources
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\obj\Any CPU\Debug\CoffeeTea.csproj.GenerateResource.cache
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\obj\Any CPU\Debug\CoffeeTea.csproj.CoreCompileInputs.cache
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\obj\Any CPU\Debug\CoffeeTea.csproj.Up2Date
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\obj\Any CPU\Debug\CoffeeTea.exe
+D:\HUIT\2025-2026_HK2\Công nghê .NET\DO_AN_CK\Do_An_NET\CoffeeTea\obj\Any CPU\Debug\CoffeeTea.pdb

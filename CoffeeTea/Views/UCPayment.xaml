@@ -1,0 +1,114 @@
+﻿<UserControl x:Class="CoffeeTea.Views.UCPayment"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CoffeeTea.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+	<Grid Margin="16">
+		<Border Style="{StaticResource CardStyle}" MaxWidth="600" HorizontalAlignment="Center">
+			<Grid Margin="10">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="Auto"/>
+					<RowDefinition Height="Auto"/>
+					<RowDefinition Height="*"/>
+					<RowDefinition Height="Auto"/>
+					<RowDefinition Height="Auto"/>
+				</Grid.RowDefinitions>
+
+				<TextBlock Grid.Row="0" Text="Xác nhận thanh toán" Style="{StaticResource TitleTextStyle}" HorizontalAlignment="Center" Margin="0,0,0,16"/>
+
+				<StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,12">
+					<TextBlock Text="{Binding InvoiceDetails.TenBan, StringFormat='Bàn: {0}'}" Style="{StaticResource BodyTextStyle}" FontWeight="Bold"/>
+					<TextBlock Text="{Binding PaymentStatusText, StringFormat='  |  {0}'}" Style="{StaticResource BodyTextStyle}" FontWeight="Bold" Foreground="{DynamicResource Brush.Danger}"/>
+					<TextBlock Text="{Binding InvoiceDetails.NgayLap, StringFormat='Ngày: {0:dd/MM/yyyy HH:mm}'}" Style="{StaticResource CaptionTextStyle}"/>
+				</StackPanel>
+
+				<DataGrid Grid.Row="2" Style="{StaticResource AppDataGridStyle}" ItemsSource="{Binding InvoiceDetails.Items}" MaxHeight="200" IsReadOnly="True">
+                    <DataGrid.Columns>
+						<DataGridTextColumn Header="Món" Binding="{Binding TenMon}" Width="*" />
+						<DataGridTextColumn Header="SL" Binding="{Binding SoLuong}" Width="50" />
+						<DataGridTextColumn Header="Đơn giá" Binding="{Binding DonGia, StringFormat={}{0:N0}}" Width="80" />
+						<DataGridTextColumn Header="Tổng" Binding="{Binding ThanhTien, StringFormat={}{0:N0}}" Width="90" />
+					</DataGrid.Columns>
+				</DataGrid>
+
+				<StackPanel Grid.Row="3" Margin="0,16,0,16">
+					<Grid Margin="0,0,0,8">
+						<TextBlock Text="Khách cần trả:" Style="{StaticResource LabelTextStyle}" VerticalAlignment="Center"/>
+						<TextBlock Text="{Binding InvoiceDetails.TongTien, StringFormat={}{0:N0} VNĐ}" Style="{StaticResource SectionTitleTextStyle}" HorizontalAlignment="Right"/>
+					</Grid>
+
+					<TextBlock Text="Phương thức thanh toán" Style="{StaticResource LabelTextStyle}"/>
+					<ComboBox Style="{StaticResource AppComboBoxStyle}" ItemsSource="{Binding PaymentMethods}" SelectedItem="{Binding SelectedPaymentMethod}" IsEnabled="{Binding CanEditPayment}"/>
+
+					<TextBlock Text="Tiền khách đưa (VNĐ)" Style="{StaticResource LabelTextStyle}"/>
+					<TextBox Style="{StaticResource AppTextBoxStyle}" Text="{Binding CustomerGivenAmount, UpdateSourceTrigger=PropertyChanged}" FontWeight="Bold" Foreground="{DynamicResource Brush.PrimaryDark}" IsEnabled="{Binding CanEditPayment}"/>
+
+					<Grid Margin="0,8,0,0">
+						<TextBlock Text="Tiền thối lại:" Style="{StaticResource LabelTextStyle}" VerticalAlignment="Center"/>
+						<TextBlock Text="{Binding ChangeAmount, StringFormat={}{0:N0} VNĐ}" Style="{StaticResource SectionTitleTextStyle}" Foreground="{DynamicResource Brush.Danger}" HorizontalAlignment="Right"/>
+					</Grid>
+				</StackPanel>
+
+				<Grid Grid.Row="4">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="*"/>
+						<ColumnDefinition Width="16"/>
+						<ColumnDefinition Width="*"/>
+					</Grid.ColumnDefinitions>
+					<Button Grid.Column="0" Content="Hủy bỏ" Height="42" Command="{Binding CancelCommand}">
+						<Button.Style>
+							<Style TargetType="Button" BasedOn="{StaticResource DangerButtonStyle}">
+								<Setter Property="Visibility" Value="Visible"/>
+								<Style.Triggers>
+									<DataTrigger Binding="{Binding IsPaid}" Value="True">
+										<Setter Property="Visibility" Value="Collapsed"/>
+									</DataTrigger>
+								</Style.Triggers>
+							</Style>
+						</Button.Style>
+					</Button>
+					<Button Grid.Column="2" Content="Hoàn tất thanh toán" Height="42" Command="{Binding ConfirmPaymentCommand}">
+						<Button.Style>
+							<Style TargetType="Button" BasedOn="{StaticResource SuccessButtonStyle}">
+								<Setter Property="Visibility" Value="Visible"/>
+								<Style.Triggers>
+									<DataTrigger Binding="{Binding IsPaid}" Value="True">
+										<Setter Property="Visibility" Value="Collapsed"/>
+									</DataTrigger>
+								</Style.Triggers>
+							</Style>
+						</Button.Style>
+					</Button>
+					<Button Grid.Column="0" Content="Quay lại" Height="42" Command="{Binding CancelCommand}">
+						<Button.Style>
+							<Style TargetType="Button" BasedOn="{StaticResource BaseButtonStyle}">
+								<Setter Property="Visibility" Value="Collapsed"/>
+								<Style.Triggers>
+									<DataTrigger Binding="{Binding IsPaid}" Value="True">
+										<Setter Property="Visibility" Value="Visible"/>
+									</DataTrigger>
+								</Style.Triggers>
+							</Style>
+						</Button.Style>
+					</Button>
+					<Button Grid.Column="2" Content="Hóa đơn đã thanh toán" Height="42" IsEnabled="False">
+						<Button.Style>
+							<Style TargetType="Button" BasedOn="{StaticResource PrimaryButtonStyle}">
+                                <Setter Property="Background" Value="{StaticResource Brush.Success}"/>
+                                <Setter Property="Visibility" Value="Collapsed"/>
+								<Style.Triggers>
+									<DataTrigger Binding="{Binding IsPaid}" Value="True">
+										<Setter Property="Visibility" Value="Visible"/>
+									</DataTrigger>
+								</Style.Triggers>
+                            </Style>
+						</Button.Style>
+					</Button>
+				</Grid>
+			</Grid>
+		</Border>
+	</Grid>
+</UserControl>

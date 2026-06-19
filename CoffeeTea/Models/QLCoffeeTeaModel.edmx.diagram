@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8f46eeeee32f4882a27a54ab5de8d6eb" Name="Diagram1" ZoomLevel="94">
+        <EntityTypeShape EntityType="QL_CoffeeTeaModel.Ban" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_CoffeeTeaModel.ChiTietHoaDon" Width="1.5" PointX="10.5" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_CoffeeTeaModel.ChiTietPhieuNhap" Width="1.5" PointX="13.5" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_CoffeeTeaModel.CongThucMon" Width="1.5" PointX="13.5" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_CoffeeTeaModel.DanhMucMon" Width="1.5" PointX="6" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_CoffeeTeaModel.HoaDon" Width="1.5" PointX="5.25" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_CoffeeTeaModel.Mon" Width="1.5" PointX="8.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_CoffeeTeaModel.NguyenLieu" Width="1.5" PointX="11.25" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_CoffeeTeaModel.NhaCungCap" Width="1.5" PointX="6" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_CoffeeTeaModel.NhanVien" Width="1.5" PointX="3" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_CoffeeTeaModel.PhieuNhap" Width="1.5" PointX="8.25" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_CoffeeTeaModel.VaiTro" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
+        <AssociationConnector Association="QL_CoffeeTeaModel.FK_HoaDon_Ban" ManuallyRouted="false" />
+        <AssociationConnector Association="QL_CoffeeTeaModel.FK_CTHD_HoaDon" ManuallyRouted="false" />
+        <AssociationConnector Association="QL_CoffeeTeaModel.FK_CTHD_Mon" ManuallyRouted="false" />
+        <AssociationConnector Association="QL_CoffeeTeaModel.FK_CTPN_NguyenLieu" ManuallyRouted="false" />
+        <AssociationConnector Association="QL_CoffeeTeaModel.FK_CTPN_PhieuNhap" ManuallyRouted="false" />
+        <AssociationConnector Association="QL_CoffeeTeaModel.FK_CongThucMon_Mon" ManuallyRouted="false" />
+        <AssociationConnector Association="QL_CoffeeTeaModel.FK_CongThucMon_NguyenLieu" ManuallyRouted="false" />
+        <AssociationConnector Association="QL_CoffeeTeaModel.FK_Mon_DanhMucMon" ManuallyRouted="false" />
+        <AssociationConnector Association="QL_CoffeeTeaModel.FK_HoaDon_NhanVien" ManuallyRouted="false" />
+        <AssociationConnector Association="QL_CoffeeTeaModel.FK_PhieuNhap_NhaCungCap" ManuallyRouted="false" />
+        <AssociationConnector Association="QL_CoffeeTeaModel.FK_NhanVien_VaiTro" ManuallyRouted="false" />
+        <AssociationConnector Association="QL_CoffeeTeaModel.FK_PhieuNhap_NhanVien" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
